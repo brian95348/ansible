@@ -1,13 +1,13 @@
 ---
 - name: clone git repo
-    command: git clone https://github.com/brian95348/chat-k8-prod.git 
-  name: cd
-    command: cd chat-k8-prod
-  name: create django-svr image
-    command: docker build -t brian95348/asgi-svr .
-  name: push to repo
-    command: docker push brian95348/asgi-svr
-  name: delete existing image
-    command: docker rmi brian95348/asgi-svr
-  name: delete existing project
-    command: cd .. && rm -rf chat-k8-prod
+  command: git clone https://github.com/brian95348/chat-k8-prod.git 
+- name: cd
+  command: cd chat-k8-prod
+- name: create django-svr image
+  command: docker build -t brian95348/asgi-svr .
+- name: push to repo
+  command: docker push brian95348/asgi-svr
+- name: delete existing image
+  command: docker rmi brian95348/asgi-svr
+- name: delete existing project
+  command: cd .. && rm -rf chat-k8-prod

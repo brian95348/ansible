@@ -1,9 +1,11 @@
 ---
 - name: create services
-    command: kubectl appply -f nginx-django-services.yaml
-  name: create statefulset
-    command: kubectl appply -f nginx-django-sts.yaml
-  name: create deployment
-    command: kubectl appply -f nginx-django-depl.yaml
-  name: create autoscaling
-    command: kubectl appply -f nginx-django-autoscaling.yaml
+  command: kubectl appply -f nginx-django-services.yaml
+- name: create config-map
+  command: kubectl appply -f nginx-django-config.yaml
+- name: create statefulset
+  command: kubectl appply -f nginx-django-sts.yaml
+- name: create deployment
+  command: kubectl appply -f nginx-django-depl.yaml
+- name: create autoscaling
+  command: kubectl appply -f nginx-django-autoscaling.yaml
